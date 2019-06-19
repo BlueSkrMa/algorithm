@@ -14,11 +14,12 @@ public class LinkedList {
 			return;
 		}
 		Node temp=head.next;
-		while(temp.next!=null) {
+		while(temp!=null) {
 			temp.value=num;
 			temp=temp.next;
+			System.out.println(1);
 		}
-		temp.next=new Node();
+		temp=new Node();
 	}
 	//查
 	public void show() {
@@ -26,7 +27,7 @@ public class LinkedList {
 		if(head!=null) {
 			list.add(head.value);
 			Node temp=head.next;
-			while(temp.next!=null) {
+			while(temp.next==null) {
 				list.add(temp.value);
 				temp=temp.next;
 			}
