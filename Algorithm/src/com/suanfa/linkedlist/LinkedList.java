@@ -4,33 +4,32 @@ import java.util.ArrayList;
 
 public class LinkedList {
 	private Node head;
-	//增
-	public void add(int num) {
+	//向末尾插入
+	public void addToLast(int num) {
+		Node node=new Node();
+		node.value=num;
 		if(head==null) {
-			head=new Node();
-			head.value=num;
-			head.next=new Node();
-			System.out.println("插入成功！");
+			head=node;
 			return;
 		}
-		Node temp=head.next;
-		while(temp!=null) {
-			temp.value=num;
+		Node temp=head;
+		while(temp.next!=null) {
 			temp=temp.next;
-			System.out.println(1);
 		}
-		temp=new Node();
+		temp.next=node;
 	}
-	//查
-	public void show() {
+	//查看所有
+	public void showAll() {
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		if(head!=null) {
-			list.add(head.value);
-			Node temp=head.next;
-			while(temp.next==null) {
+			Node node=new Node();
+			Node temp=head;
+			while(temp.next!=null) {
 				list.add(temp.value);
 				temp=temp.next;
 			}
+			temp.next=node;
+			list.add(temp.value);
 		}
 		System.out.println(list);
 	}
