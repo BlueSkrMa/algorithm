@@ -33,6 +33,23 @@ public class LinkedList {
 		}
 		System.out.println(list);
 	}
+	//单链表反转
+	public void fanZhaun() {
+		if(head==null||head.next==null) {
+			System.out.println("错误！");
+			return;
+		}
+		Node preNode=null;
+		Node curNode=head;
+		Node nextNode=null;
+		while(curNode!=null) {
+			nextNode=curNode.next;
+			curNode.next=preNode;
+			preNode=curNode;
+			curNode=nextNode;
+		}
+		head=curNode;
+	}
 }
 class Node{
 	public int value;
