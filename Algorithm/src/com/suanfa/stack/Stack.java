@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Stack {
-	private List<Integer> list;
+	List<Integer> list;
 	public Stack() {
 		list=new ArrayList<Integer>();
 	}
@@ -22,11 +22,18 @@ public class Stack {
 		if(list.size()<=0) {
 			throw new OutOfMemoryError();
 		}
-		for (int i = 0; i < array.length; i++) {
-			
+		int min=list.get(0);
+		for (int i = 0; i < list.size(); i++) {
+			if(min>list.get(i)) {
+				min=list.get(i);
+			}
 		}
+		return min;
 	}
 	public boolean deleteTop() {
-		
+		if(list==null||list.size()==0) {
+			return false;
+		}
+		return list.remove(list.size()-1)!=null;
 	}
 }
