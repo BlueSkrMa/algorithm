@@ -24,12 +24,10 @@ public class LinkedList {
 		if(head!=null) {
 			Node node=new Node();
 			Node temp=head;
-			while(temp.next!=null) {
+			while(temp!=null) {
 				list.add(temp.value);
 				temp=temp.next;
 			}
-			temp.next=node;
-			list.add(temp.value);
 		}
 		System.out.println(list);
 	}
@@ -41,14 +39,13 @@ public class LinkedList {
 		}
 		Node preNode=null;
 		Node curNode=head;
-		Node nextNode=null;
 		while(curNode!=null) {
-			nextNode=curNode.next;
+			Node next=curNode.next;
 			curNode.next=preNode;
 			preNode=curNode;
-			curNode=nextNode;
+			curNode=next;
 		}
-		head=curNode;
+		head=preNode;
 	}
 }
 class Node{
