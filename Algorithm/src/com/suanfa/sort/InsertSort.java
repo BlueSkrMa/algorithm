@@ -2,6 +2,11 @@ package com.suanfa.sort;
 
 import java.util.Arrays;
 
+/**
+ * 插入排序
+ * @author majing
+ *
+ */
 public class InsertSort {
 	public static void main(String[] args) {
 		int[] arr = a();
