@@ -20,10 +20,10 @@ public class LinkedList {
 			return;
 		}
 		Node temp=head;
-		while(temp.next!=null) {
+		while(temp!=null) {
 			temp=temp.next;
 		}
-		temp.next=node;
+		temp=node;
 	}
 	//查看所有
 	public void showAll() {
